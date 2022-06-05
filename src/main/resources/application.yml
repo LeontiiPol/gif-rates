@@ -1,2 +1,20 @@
 server:
   port: 8082
+
+client:
+  rates:
+    app-id: 895c1cb15af84a5ea317c189a269c101
+    base: USD
+    api:
+      url: https://openexchangerates.org/api/
+      params: app_id=${client.rates.app-id}&base=${client.rates.base}
+      codes: /currencies.json
+      latest: /latest.json?${client.rates.api.params}
+      historical: /historical/{date}.json?${client.rates.api.params}
+
+  giphy:
+    app-id: MCjb3HCb91xAIqzv4MefkfoeJj4tW2qG
+    api:
+      url: https://api.giphy.com/v1/gifs
+      params: api_key=${client.giphy.app-id}
+      random: /random?${client.giphy.api.params}
