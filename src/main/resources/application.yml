@@ -1,6 +1,11 @@
 server:
   port: 8082
 
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
 client:
   rates:
     app-id: 895c1cb15af84a5ea317c189a269c101
@@ -18,3 +23,23 @@ client:
       url: https://api.giphy.com/v1/gifs
       params: api_key=${client.giphy.app-id}
       random: /random?${client.giphy.api.params}
+
+swagger:
+  app:
+    description: "<p>Gif-rates allows to display random GIFs depending on a currency's exchange rate. 
+    It includes 2 REST API:<br/>
+    1. <b><i>/api/gif-rates/rates/{currency-code}</i></b> checks whether currency with given code has risen against USD 
+    since yesterday or not. If it has risen - returns Gif model which contains public URLs to display random GIF 
+    with \"rich\" tag in GIF, MP4 and WEBP formats. But if given currency has gone down it returns Gif model which 
+    contains URLs to display random GIF with \"broke\" tag.<br/>
+    2. <b><i>/api/gif-rates/currencies/codes</i></b> returns all currency codes that can be used to get 
+    random \"rich\" or \"broke\" GIFs.<br/>
+    Gif-rates uses 2 third-party REST API:<br/>
+    1. <a href=\"https://docs.openexchangerates.org/\">openexchangerates</a> to get information about currencies 
+    and their exchange rates.<br/>
+    2. <a href=\"https://developers.giphy.com/docs/api#quick-start-guide\">giphy</a> to get GIFs and other information 
+    related to them.</p>"
+  developer:
+    name: Leontii Polovinko
+    cv: https://spb.hh.ru/resume/e601416dff0adbfba60039ed1f713367527774
+    email: leontiypolovinko@gmail.com
