@@ -8,8 +8,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 @EnableFeignClients
 public class GifRatesApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(GifRatesApplication.class, args);
-	}
-
+  public static void main(String[] args) {
+    SpringApplication.run(GifRatesApplication.class, args);
+  }
 }
