@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Gif rates</title>
+    <meta name="description" content="Our first page">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="scripts/currencies.js"></script>
+    <script src="scripts/gif.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="text-center">
+            <h2>Choose currency to see gif describing its exchange rate relatively to USD</h2>
+            <div class="column center-block">
+                <select id="currencies"></select>
+                <button id="rateBtn" class="btn btn-success">Get rate</button>
+                <div>
+                    <img id="rateGif"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
